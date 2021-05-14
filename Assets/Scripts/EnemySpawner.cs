@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        while(true)
+        while(spawn)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minSpawnTime, maxSpawnTime));
             SpawnAttackers();
@@ -34,6 +34,6 @@ public class EnemySpawner : MonoBehaviour
 
     public void StopSpawn()
     {
-
+        spawn = false;
     }
 }
