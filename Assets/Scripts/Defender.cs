@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Defender : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] int StarCost = 100;
+
+    public int GetStarCost() { return StarCost; }
+
+    public void AddStart(int amount)
     {
         
     }

@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class DefenderButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] Defender defenderPrefab;
+
+    private void OnMouseDown()
     {
-        
+        DefenderButton[] buttons = FindObjectsOfType<DefenderButton>();
+        foreach (DefenderButton button in buttons)
+        {
+            button.GetComponent<SpriteRenderer>().color = new Color32(120, 120, 120, 255);
+        }
+        GetComponent<SpriteRenderer>().color = Color.white;
+        FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    void Start()
     {
         
     }
